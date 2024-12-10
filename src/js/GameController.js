@@ -5,6 +5,9 @@ export default class GameController {
   }
 
   init() {
+    this.gamePlay.drawUi();
+    this.gamePlay.addEventListener(this.onCellEnter.bind(this));
+    this.gamePlay.addEventListener(this.onCellLeave.bind(this));
     // TODO: add event listeners to gamePlay events
     // TODO: load saved stated from stateService
   }
@@ -14,10 +17,12 @@ export default class GameController {
   }
 
   onCellEnter(index) {
+
     // TODO: react to mouse enter
   }
 
   onCellLeave(index) {
+    this.gamePlay.hideCellTooltip(index);
     // TODO: react to mouse leave
   }
 }
